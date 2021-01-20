@@ -1,0 +1,42 @@
+#recipeList {
+	position: relative;
+}
+
+.tab {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.tab button {
+	background-color: gray; 
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 35px;
+	/*margin-bottom: -20px;*/
+}
+
+.tab button:hover {
+	cursor: pointer;
+}
+
+.tab button.active {
+	background-color: white;
+}
+
+.tabContent {
+	position: absolute;
+	top: 5px;
+	margin-top: 20px;
+	padding-top: 5px;
+	padding-left: 20px;
+	height: auto;
+	width: 70%;
+	border-radius: 15px;
+	background-color: white;
+}

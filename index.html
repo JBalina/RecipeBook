@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="frame.js" charset="utf-8"></script>
+	<script src="script.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="frame.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Recipe Book</title>
+</head>
+<body>
+	<!--<h1 id="title">The Recipe Book</h1>-->
+	<div id="header"></div>
+	<div id="recipeList">
+		<div class="tab">
+			<button class="tabLinks" onclick="openTab(event, 'Entrees')" id="defaultTab">Entrees</button>
+			<button class="tabLinks" onclick="openTab(event, 'Desserts')">Desserts</button>
+			<button class="tabLinks" onclick="openTab(event, 'Sides')">Sides</button>
+			<button class="tabLinks" onclick="openTab(event, 'Drinks')">Drinks</button>
+			<button class="tabLinks" onclick="openTab(event, 'Scratch')">Scratch</button>
+		</div>
+
+		<div id="Entrees" class="tabContent">
+			<h3>Entrees:</h3>
+			<ul>
+				<li>Beef Stroganoff</li>
+				<li>Chicken Tikka Masala</li>
+				<li>Chicken and Sausage Gumbo</li>
+				<li>Kung Pao Chicken</li>
+				<li><a href="recipes/udonNoodles/udonNoodles.html">Udon Noodles Stir-fry</a></li>
+				<li>Chicken Adobo</li>
+				<li>Katsu Curry</li>
+				<li>Chicken Katsu</li>
+				<li>Carne Asada</li>
+				<li>Latkes</li>
+				<li>Falafel</li>
+			</ul>
+		</div>
+
+		<div id="Desserts" class="tabContent">
+			<h3>Desserts:</h3>
+			<ul>
+				<li>Churros w/ Chocolate Dip</li>
+				<li>Acai Bowl</li>
+				<li>Cassava Cake</li>
+			</ul>
+		</div>
+
+		<div id="Sides" class="tabContent">
+			<h3>Sides:</h3>
+			<ul>
+				<li>Scallion Pancakes</li>
+				<li>Jalapeño Poppers</li>
+				<li>Garlic Parmesan Roasted Broccoli</li>
+				<li>Applesauce</li>
+				<li>French Onion Soup</li>
+			</ul>
+		</div>
+
+		<div id="Drinks" class="tabContent">
+			<h3>Drinks:</h3>
+			<ul>
+				<li>Horchata</li>
+				<li>Brown Sugar Bubble Tea</li>
+				<li>Chocolate Peanut Butter Oatmeal Smoothie</li>
+				<li>Strawberry Banana Smoothie</li>
+			</ul>
+		</div>
+
+		<div id="Scratch" class="tabContent">
+			<h3>From Scratch:</h3>	
+			<ul>
+				<li>Chili Oil</li>
+				<li>Ghee</li>
+				<li>Teriyaki Sauce</li>
+				<li>Tahini Sauce</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
