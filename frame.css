@@ -30,3 +30,7 @@ a:link {
 a:visited {
 	color: darkorange;
 }
+
+#title > a {
+	color:white;
+}
