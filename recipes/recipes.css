@@ -11,3 +11,11 @@
 	border-radius: 15px;
 	background-color: white;
 }
+
+.finishedImg {
+	display: block;
+	max-height: 250px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
