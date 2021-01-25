@@ -19,3 +19,15 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+ul {
+	margin: 0;
+}
+
+ol {
+	margin: 0;
+}
+
+h4 {
+	margin: 10px;
+}
