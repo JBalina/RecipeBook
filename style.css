@@ -2,6 +2,10 @@
 	position: relative;
 }
 
+#recipeList div {
+
+}
+
 .tab {
 	overflow: hidden;
 	position: absolute;
@@ -31,13 +35,20 @@
 
 .tabContent {
 	position: absolute;
+	height: auto;
+	margin-top: 25px;
+	width: 70%;
+	padding-bottom: 120px;
+}
+
+.tabContent div {
 	top: 5px;
-	margin-top: 20px;
 	padding-top: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 20px;
 	height: auto;
-	width: 70%;
+	width: 100%;
 	border-radius: 15px;
 	background-color: white;
 }
@@ -56,3 +67,4 @@
 	max-width: 200px;
 	max-height: 200px;
 }
+

@@ -34,3 +34,7 @@ a:visited {
 #title > a {
 	color:white;
 }
+
+body {
+	padding-bottom: 50px;
+}
