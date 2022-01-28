@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	var checkbox = document.getElementById("toggle");
-
 	checkbox.addEventListener('change', function () {
 	if (checkbox.checked) {
 		toGallery();
