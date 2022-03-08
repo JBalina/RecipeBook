@@ -53,8 +53,58 @@ function getMouseLocation(e) {
 	return new Array(posx, posy)
 }
 
+function handleHoverMouseOver(event) {
+	if(event.target.href) {
+		//console.log(String(event.target.href));
+		var str = imageFromUrl(String(event.target.href))
+		var mousePos = getMouseLocation(event)
+		var box = document.getElementById("hoverImage")
+		box.style.display = 'block'
+		box.style.top = (mousePos[1]) + 'px'
+		box.style.left = (mousePos[0]+20) + 'px'
+		box.children[0].src = str
+	}
+}
+
+function handleHoverMouseMove(event) {
+	var mousePos = getMouseLocation(event)
+	var box = document.getElementById("hoverImage")
+	box.style.top = (mousePos[1]) + 'px'
+	box.style.left = (mousePos[0]+20) + 'px'
+}
+
+function handleHoverMouseOut(event) {
+	if(event.target.href) {
+		var box = document.getElementById("hoverImage")
+		box.style.display = 'none'
+	}
+}
+
+function addListHover() {
+	let food = document.getElementsByTagName("li")
+	// let food = document.getElementsByClassName("tabContent")
+	for (var i = 0; i < food.length; i++) {
+		//console.log(food[i])
+		food[i].addEventListener("mouseover", handleHoverMouseOver)
+		food[i].addEventListener("mousemove", handleHoverMouseMove)
+		food[i].addEventListener("mouseout", handleHoverMouseOut)
+	}
+}
+
+function removeListHover() {
+	let food = document.getElementsByTagName("li")
+	// let food = document.getElementsByClassName("tabContent")
+	for (var i = 0; i < food.length; i++) {
+		//console.log(food[i])
+		food[i].removeEventListener("mouseover", handleHoverMouseOver)
+		food[i].removeEventListener("mousemove", handleHoverMouseMove)
+		food[i].removeEventListener("mouseout", handleHoverMouseOut)
+	}
+}
+
 //This function deletes the unordered list and turns it into a three column table with images
 function toGallery() {
+	removeListHover()
 	var tabsArray = ['entreesContent', 'sidesContent', 'dessertsContent', 'drinksContent', 'scratchContent'];
 	var listNameArray = ['entreesItems', 'sidesItems', 'dessertsItems', 'drinksItems', 'scratchItems'];
 	for(var tabIndex = 0; tabIndex < tabsArray.length; tabIndex++) {
@@ -95,6 +145,7 @@ function toGallery() {
 	}
 }
 
+
 function toList() {
 	var tabsArray = ['entreesContent', 'sidesContent', 'dessertsContent', 'drinksContent', 'scratchContent'];
 	var listNameArray = ['entreesItems', 'sidesItems', 'dessertsItems', 'drinksItems', 'scratchItems'];
@@ -129,41 +180,15 @@ function toList() {
     	list.setAttribute("id",listNameArray[tabIndex]);
     	content.appendChild(list);
 	}
+	addListHover()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.getElementById("defaultTab").click()
 
-	let food = document.getElementsByClassName("tabContent")
-	for (var i = 0; i < food.length; i++) {
-		//console.log(food[i])
-		food[i].addEventListener("mouseover", function(event) {
-			if(event.target.href) {
-				//console.log(String(event.target.href));
-				var str = imageFromUrl(String(event.target.href))
-				var mousePos = getMouseLocation(event)
-				var box = document.getElementById("hoverImage")
-				box.style.display = 'block'
-				box.style.top = (mousePos[1]) + 'px'
-				box.style.left = (mousePos[0]+20) + 'px'
-				box.children[0].src = str
-			}
-		})
-		food[i].addEventListener("mousemove", function(event) {
-			var mousePos = getMouseLocation(event)
-			var box = document.getElementById("hoverImage")
-			box.style.top = (mousePos[1]) + 'px'
-			box.style.left = (mousePos[0]+20) + 'px'
-		})
-		food[i].addEventListener("mouseout", function(event) {
-			if(event.target.href) {
-				var box = document.getElementById("hoverImage")
-				box.style.display = 'none'
-			}
-		})
-	}
+	addListHover()
 
-	var checkbox = document.getElementById("toggle");
+	var checkbox = document.getElementById("toggle")
 	checkbox.addEventListener('change', function () {
 	if (checkbox.checked) {
 		toGallery();
