@@ -28,6 +28,6 @@ ol {
 	margin: 0;
 }
 
-h4 {
+h4:not(#sideBar h4) {
 	margin: 10px;
 }
