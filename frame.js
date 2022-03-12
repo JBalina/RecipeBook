@@ -43,38 +43,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		let list1 = document.getElementById("entreesItems").getElementsByTagName("li")
 		var index = seed % list1.length
+		var item1 = list1[index].innerHTML.substring(0,9)+"https://jbalina.github.io/RecipeBook/"+list1[index].innerHTML.substring(9)
 		var img1 = document.createElement("img")
-		img1.src = imageFromElement(list1[index].innerHTML)
+		img1.src = imageFromElement(item1)
 		sideBar.appendChild(img1)
 		sideBar.appendChild(document.createElement("br"))
 		var div1 = document.createElement("div")
-		div1.innerHTML = list1[index].innerHTML
+		div1.innerHTML = item1
 		sideBar.appendChild(div1)
 		sideBar.appendChild(document.createElement("br"))
-		localStorage.setItem("item1", list1[index].innerHTML)
+		localStorage.setItem("item1", item1)
 
 
 		let types = ["sidesItems", "dessertsItems", "drinksItems"]
 		var typesIndex = seed % types.length
 		let list2  = document.getElementById(types[typesIndex]).getElementsByTagName("li")
 		index = seed % list2.length
+		var item2 = list2[index].innerHTML.substring(0,9)+"https://jbalina.github.io/RecipeBook/"+list2[index].innerHTML.substring(9)
 		var img2 = document.createElement("img")
-		img2.src = imageFromElement(list2[index].innerHTML)
+		img2.src = imageFromElement(item2)
 		sideBar.appendChild(img2)
 		sideBar.appendChild(document.createElement("br"))
 		var div2 = document.createElement("div")
-		div2.innerHTML = list2[index].innerHTML
+		div2.innerHTML = item2
 		sideBar.appendChild(div2)
 		sideBar.appendChild(document.createElement("br"))
-		localStorage.setItem("item2", list2[index].innerHTML)
+		localStorage.setItem("item2", item2)
 
 	}
 	else {
 		var food1 = window.localStorage.getItem("item1")
 		var food2 = window.localStorage.getItem("item2")
 		if (!(food1 && food2)) {
-			food1 = "<a href=\"recipes/katsuCurry/katsuCurry.html\">Katsu Curry</a>"
-			food2 = "<a href=\"recipes/refriedBBeans/refriedBBeans.html\">Refried Black Beans</a>"
+			food1 = "<a href=\"https://jbalina.github.io/RecipeBook/recipes/katsuCurry/katsuCurry.html\">Katsu Curry</a>"
+			food2 = "<a href=\"https://jbalina.github.io/RecipeBook/recipes/refriedBBeans/refriedBBeans.html\">Refried Black Beans</a>"
 		}
 		var img1 = document.createElement("img")
 		img1.src = imageFromElement2(food1)
