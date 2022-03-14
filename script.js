@@ -19,13 +19,13 @@ function openTab(event, tabName)
 }
 
 function imageFromUrl(string) {
-	var folder = string.split("/")
-	var newStr = ""
+	var folder = string.split("/");
+	var newStr = "";
 	for (var i = 0; i < folder[folder.length-1].length-5; i++) {
-		newStr += folder[folder.length-1][i]
+		newStr += folder[folder.length-1][i];
 	}
-	var newUrl = "recipes/"+newStr+"/"+newStr+".jpg"
-	return newUrl
+	var newUrl = "recipes/"+newStr+"/"+newStr+".jpg";
+	return newUrl;
 }
 
 function imageFromElement(string) {
@@ -36,69 +36,69 @@ function imageFromElement(string) {
 		newStr = string.charAt(i) + newStr;
 		i--;
 	}
-	var newUrl = "recipes/"+newStr+"/"+newStr+".jpg"
+	var newUrl = "recipes/"+newStr+"/"+newStr+".jpg";
 	return newUrl;
 }
 
 function getMouseLocation(e) {
-	if (!e) var e = window.event
+	if (!e) var e = window.event;
 	if (e.pageX || e.pageY) {
-		posx = e.pageX
-		posy = e.pageY
+		posx = e.pageX;
+		posy = e.pageY;
 	}
 	else if (e.clientX || e.clientY) {
-		posx = e.clientX + document.body.scrollLeft    + document.documentElement.scrollLeft
-		posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop
+		posx = e.clientX + document.body.scrollLeft    + document.documentElement.scrollLeft;
+		posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 	}
-	return new Array(posx, posy)
+	return new Array(posx, posy);
 }
 
 function handleHoverMouseOver(event) {
 	if(event.target.href) {
 		//console.log(String(event.target.href));
-		var str = imageFromUrl(String(event.target.href))
-		var mousePos = getMouseLocation(event)
-		var box = document.getElementById("hoverImage")
-		box.style.display = 'block'
-		box.style.top = (mousePos[1]) + 'px'
-		box.style.left = (mousePos[0]+20) + 'px'
-		box.children[0].src = str
+		var str = imageFromUrl(String(event.target.href));
+		var mousePos = getMouseLocation(event);
+		var box = document.getElementById("hoverImage");
+		box.style.display = 'block';
+		box.style.top = (mousePos[1]) + 'px';
+		box.style.left = (mousePos[0]+20) + 'px';
+		box.children[0].src = str;
 	}
 }
 
 function handleHoverMouseMove(event) {
-	var mousePos = getMouseLocation(event)
-	var box = document.getElementById("hoverImage")
-	box.style.top = (mousePos[1]) + 'px'
-	box.style.left = (mousePos[0]+20) + 'px'
+	var mousePos = getMouseLocation(event);
+	var box = document.getElementById("hoverImage");
+	box.style.top = (mousePos[1]) + 'px';
+	box.style.left = (mousePos[0]+20) + 'px';
 }
 
 function handleHoverMouseOut(event) {
 	if(event.target.href) {
-		var box = document.getElementById("hoverImage")
-		box.style.display = 'none'
+		var box = document.getElementById("hoverImage");
+		box.style.display = 'none';
 	}
 }
 
 function addListHover() {
-	let food = document.getElementsByTagName("li")
+	let food = document.getElementsByTagName("li");
 	// let food = document.getElementsByClassName("tabContent")
 	for (var i = 0; i < food.length; i++) {
 		//console.log(food[i])
-		food[i].addEventListener("mouseover", handleHoverMouseOver)
-		food[i].addEventListener("mousemove", handleHoverMouseMove)
-		food[i].addEventListener("mouseout", handleHoverMouseOut)
+		food[i].addEventListener("mouseover", handleHoverMouseOver);
+		food[i].addEventListener("mousemove", handleHoverMouseMove);
+		food[i].addEventListener("mouseout", handleHoverMouseOut);
 	}
 }
 
 function removeListHover() {
-	let food = document.getElementsByTagName("li")
+	let food = document.getElementsByTagName("li");
 	// let food = document.getElementsByClassName("tabContent")
 	for (var i = 0; i < food.length; i++) {
 		//console.log(food[i])
-		food[i].removeEventListener("mouseover", handleHoverMouseOver)
-		food[i].removeEventListener("mousemove", handleHoverMouseMove)
-		food[i].removeEventListener("mouseout", handleHoverMouseOut)
+		food[i].removeEventListener("mouseover", handleHoverMouseOver);
+		food[i].removeEventListener("mousemove", handleHoverMouseMove);
+		food[i].removeEventListener("mouseout", handleHoverMouseOut);
 	}
 }
 
@@ -184,11 +184,11 @@ function toList() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	document.getElementById("defaultTab").click()
+	document.getElementById("defaultTab").click();
 
-	addListHover()
+	addListHover();
 
-	var checkbox = document.getElementById("toggle")
+	var checkbox = document.getElementById("toggle");
 	checkbox.addEventListener('change', function () {
 	if (checkbox.checked) {
 		toGallery();
