@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		sideBar.appendChild(item);
 		if("index_on" in window) {
 			var date = new Date();
-			var seed = (date.getFullYear() % 2000) * (date.getMonth() + 1) * date.getDate() * (date.getDay() + 1);
+			var seed = (date.getFullYear() % 2000) * (date.getMonth() + 1) * date.getDate() + (date.getDay() + 1);
 
 			let list1 = document.getElementById("entreesItems").getElementsByTagName("li");
 			var index = seed % list1.length;
